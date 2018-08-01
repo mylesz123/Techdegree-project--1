@@ -1,7 +1,7 @@
 // FSJS - Random Quote Generator
-let randomQuote = Math.floor( Math.random()* 6);
+
 // Create the array of quote objects and name it quotes
-let quotes=
+let myQuotes=
 [
   {
 			quote: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
@@ -24,18 +24,19 @@ let quotes=
 	    	name:"Confucius"
 	    },
       {
-    quote:'If ya don\'t know now ya know',
-    name:'-The Notorious B.I.G',
-    citation:,
-    year: 1998
+        quote:'If ya don\'t know now ya know',
+        name:'-The Notorious B.I.G',
+        citation:,
+        year: 1998
   }
 ];
-
+//random quote selector
+let randomQuote = Math.floor( Math.random() * (myQuotes.length));
 
 // Create the getRandomQuuote function and name it getRandomQuote
 // takes 1 parameter which is the array
 
-function getRandomQuote(quotes) {
+function getRandomQuote(myQuotes) {
 
 };
 
