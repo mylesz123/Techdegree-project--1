@@ -1,24 +1,26 @@
 // FSJS - Random Quote Generator
-let randomQuote = Math.floor( Math.random() * 6) + 1;
+let randomQuote = Math.floor( Math.random()* 6);
 // Create the array of quote objects and name it quotes
-let quotes {
-  quo: "If ya don't know now ya know",
-  author: 'The Notorious B.I.G',
-  date:
-}
+let quotes [
+  {
+    quote:'If ya don\'t know now ya know',
+    source:'-The Notorious B.I.G',
+    citation:,
+    year:,
+  }
+
+]
 
 
 // Create the getRandomQuuote function and name it getRandomQuote
 
-funtion getRandomQuote() {
-  $.each(quotes,function (i, quotes) {
-    console.log(i + ': ' + quotes );
-  });
+function getRandomQuote() {
+
 };
 
 // Create the printQuote funtion and name it printQuote
-funtion printQuote() {
-  console.log(getRandomQuote);
+function printQuote() {
+
 };
 
 
