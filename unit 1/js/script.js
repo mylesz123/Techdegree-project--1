@@ -9,6 +9,7 @@ let randomQuote = Math.floor( Math.random() * (myQuotes.length));
 // takes 1 parameter which is the array
 
 function getRandomQuote(myQuotes) {
+$.getJSON(../JSON/myQuotes.json, (e)=>{
 $('#quote-box').html(myQuotes.randomQuote);
 };
 
@@ -21,3 +22,7 @@ return getRandomQuote;
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+
+
+});
