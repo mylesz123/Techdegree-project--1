@@ -37,7 +37,7 @@ let randomQuote = Math.floor( Math.random() * (myQuotes.length));
 // takes 1 parameter which is the array
 
 function getRandomQuote(myQuotes) {
-
+$('#quote-box').html(myQuotes.randomQuote);
 };
 
 // Create the printQuote funtion and name it printQuote
