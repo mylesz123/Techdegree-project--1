@@ -1,5 +1,4 @@
 // FSJS - Random Quote Generator
-
 // Create the array of quote objects and name it quotes
 var myQuotes = [
   {
@@ -44,13 +43,9 @@ return myQuotes; //may or may not need
 // Create the printQuote funtion and name it printQuote
 function printQuote(){
 return getRandomQuote;
-$('#loadQuote').on('click');
+$('#loadQuote').on('click'); //using jquery as an ID selector
 return(myQuotes);
 };
-
-
-
-
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
