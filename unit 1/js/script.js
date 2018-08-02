@@ -1,4 +1,5 @@
 // FSJS - Random Quote Generator
+let refresh = ''
 // Create the array of quote objects and name it quotes
 var myQuotes = [
   {
@@ -36,14 +37,25 @@ let randomQuote = Math.floor( Math.random() * (myQuotes.length));
 // takes 1 parameter which is the array
 
 function getRandomQuote(myQuotes) {
-$(myQuotes).html(randomQuote);
+refresh = $(myQuotes).html(randomQuote);
 return myQuotes; //may or may not need
 };
 
 // Create the printQuote funtion and name it printQuote
 function printQuote(){
 return getRandomQuote;
-$('#loadQuote').on('click'); //using jquery as an ID selector
+$('#loadQuote').on('click', ()=>{ //using jquery as an ID selector
+  $('#quote-box p').html(refresh);
+  if(myQuotes === year){
+    return year;
+  }
+  else {
+    return myQuotes;
+  }
+});
+
+//need conditional statement for citation and year for span element
+//$('quote-box').html(variable created to hold string values)
 return(myQuotes);
 };
 
