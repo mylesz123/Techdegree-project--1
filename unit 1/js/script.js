@@ -53,6 +53,12 @@ $('#loadQuote').on('click', ()=>{ //using jquery as an ID selector
     return myQuotes;
   }
 });
+/* <p class="quote"> [quote here] </p>
+<p class="source"> [source here]
+  <span class="citation"> [citation here] </span>
+  <span class="year"> [year here] </span>
+</p>
+still stuck on this part*/
 
 //need conditional statement for citation and year for span element
 //$('quote-box').html(variable created to hold string values)
