@@ -41,10 +41,11 @@ refresh = $(myQuotes).html(randomQuote);
 return myQuotes; //may or may not need
 };
 
-// Create the printQuote funtion and name it printQuote
-function printQuote(){
+// Create the print Quote funtion and name it printQuote
+function printQuote(e){
 return getRandomQuote;
-$('#loadQuote').on('click', ()=>{ //using jquery as an ID selector
+$('#loadQuote').on('click', (e)=>{ //using jquery as an ID selector
+  e.preventDefault();
   $('#quote-box p').html(refresh);
   if(myQuotes === year){
     return year;
@@ -53,12 +54,14 @@ $('#loadQuote').on('click', ()=>{ //using jquery as an ID selector
     return myQuotes;
   }
 });
-/* <p class="quote"> [quote here] </p>
-<p class="source"> [source here]
-  <span class="citation"> [citation here] </span>
-  <span class="year"> [year here] </span>
+/*  VAR post = <p class="quote"> myQuotes.quote </p>
+<p class="name"> myQuotes.name
+  <span class="citation"> myQuotes.citation </span>
+  <span class="year"> myQuotes.year </span>
 </p>
+      string.concat();
 still stuck on this part*/
+
 
 //need conditional statement for citation and year for span element
 //$('quote-box').html(variable created to hold string values)
