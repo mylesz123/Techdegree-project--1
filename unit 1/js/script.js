@@ -30,8 +30,14 @@ var myQuotes = [
   }
 ];
 
+let container = $('div .container');
+  var post = $('.quote');
+  var name = $('myQuotes.name');
+  var citation = $("myQuotes.citation");
+  var year = $("myQuotes.year");
+
 //random quote selector
-let randomQuote = Math.floor( Math.random() * (myQuotes.length));
+var randomQuote = Math.floor( Math.random() * (myQuotes.length));
 
 // Create the getRandomQuuote function and name it getRandomQuote
 // takes 1 parameter which is the array
@@ -47,11 +53,16 @@ return getRandomQuote;
 $('#loadQuote').on('click', (e)=>{ //using jquery as an ID selector
   e.preventDefault();
   $('#quote-box p').html(refresh);
-  if(myQuotes === year){
-    return year;
+  //need conditional statement for citation and year for span element
+  $.each('.citation .year', ()=>{
+    container += (post + ' ' + name)
+  });
+  if(randomQuote === citation || randomQuote === year ){
+    return citaion += year;
   }
-  else {
-    return myQuotes;
+  else
+  {
+    return name;
   }
 });
 /*let container = $('div .container');
@@ -63,13 +74,13 @@ $('#loadQuote').on('click', (e)=>{ //using jquery as an ID selector
   //<span class="year"> myQuotes.year </span>
 </p>
 $.each('.citation .year', ()=>{
-  container += (post + name)
+  container += (post + ' ' + name)
 });
 
 
 //need conditional statement for citation and year for span element
 if(randomQuote === citation || randomQuote === year ){
-  return citaion + year;
+  return citaion += year;
 }
 else
 {
