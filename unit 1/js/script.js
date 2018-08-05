@@ -58,38 +58,14 @@ $('#loadQuote').on('click', (e)=>{ //using jquery as an ID selector
     container += (post + ' ' + name)
   });
   if(randomQuote === citation || randomQuote === year ){
-    return citaion += year;
+    return (post + ' ' + name + ' ' + citaion + ' ' + year;
   }
   else
   {
-    return name;
+    return (post + ' ' + name);
   }
 });
-/*let container = $('div .container');
-  var post = $('.quote');
-  var name = $('myQuotes.name');
-  var citation = $("myQuotes.citation");
-  var year = $("myQuotes.year");
-  //<span class="citation"> myQuotes.citation </span>
-  //<span class="year"> myQuotes.year </span>
-</p>
-$.each('.citation .year', ()=>{
-  container += (post + ' ' + name)
-});
 
-
-//need conditional statement for citation and year for span element
-if(randomQuote === citation || randomQuote === year ){
-  return citaion += year;
-}
-else
-{
-  return name;
-}
-//$('quote-box').html(variable created to hold string values)
-return(myQuotes +=);
-};
-*/
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
