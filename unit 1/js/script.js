@@ -30,11 +30,11 @@ var myQuotes = [
   }
 ];
 
-let container = $('div .container');
-  var post = $('.quote');
-  var name = $('myQuotes.name');
-  var citation = $("myQuotes.citation");
-  var year = $("myQuotes.year");
+
+  var post = myQuotes.quote;
+  var name = myQuotes.name;
+  var citation = myQuotes.citation;
+  var year = myQuotes.year; //dot notayion to select elements in myQuotes
 
 //random quote selector
 var randomQuote = Math.floor( Math.random() * (myQuotes.length));
@@ -42,29 +42,28 @@ var randomQuote = Math.floor( Math.random() * (myQuotes.length));
 // Create the getRandomQuuote function and name it getRandomQuote
 // takes 1 parameter which is the array
 
-function getRandomQuote(myQuotes) {
-refresh = $(myQuotes).html(randomQuote);
-return myQuotes; //may or may not need
+function getRandomQuote(data) {
+refresh = alert(myQuotes.randomQuote);
+return myQuotes.refresh; //may or may not need
 };
 
 // Create the print Quote funtion and name it printQuote
 function printQuote(e){
-return getRandomQuote;
-$('#loadQuote').on('click', (e)=>{ //using jquery as an ID selector
-  e.preventDefault();
-  $('#quote-box p').html(refresh);
-  //need conditional statement for citation and year for span element
-  $.each('.citation .year', ()=>{
-    container += (post + ' ' + name)
-  });
-  if(randomQuote === citation || randomQuote === year ){
-    return (post + ' ' + name + ' ' + citaion + ' ' + year;
-  }
-  else
-  {
-    return (post + ' ' + name);
-  }
-});
+     $('#quote-box p').html(refresh); //???????
+    //need conditional statement for citation and year for span element
+      $.each('.citation .year', ()=>{
+      container += (post + ' ' + name);
+    });
+    if(randomQuote === citation || randomQuote === year ){
+      return (post + ' ' + name + ' ' + citaion + ' ' + year);
+    }
+    else
+    {
+      return (post + ' ' + name);
+    }
+  return getRandomQuote;
+};
+
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
