@@ -48,20 +48,19 @@ return myQuotes.refresh; //may or may not need
 };
 
 // Create the print Quote funtion and name it printQuote
-function printQuote(e){
-     $('#quote-box p').html(refresh); //???????
+function printQuote(){
+  $('#quote-box p').html(refresh);
     //need conditional statement for citation and year for span element
-      $.each('.citation .year', ()=>{
-      container += (post + ' ' + name);
-    });
-    if(randomQuote === citation || randomQuote === year ){
-      return (post + ' ' + name + ' ' + citaion + ' ' + year);
+    $.each('.citation .year', ()=>{
+      if(randomQuote === citation || randomQuote === year ){
+        return (post + ' ' + name + ' ' + citaion + ' ' + year);
     }
     else
     {
       return (post + ' ' + name);
     }
-  return getRandomQuote;
+      return getRandomQuote;
+  });
 };
 
 
