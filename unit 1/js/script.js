@@ -49,17 +49,17 @@ return myQuotes.refresh; //may or may not need
 
 // Create the print Quote funtion and name it printQuote
 function printQuote(){
-  $('#quote-box p').html(refresh);
+  $('#quote-box p').html(randomQuote);
     //need conditional statement for citation and year for span element
-    $.each('.citation .year', ()=>{
-      if(randomQuote === citation || randomQuote === year ){
+    $.each(myQuotes, ()=>{
+      if(myQuotes === citation || myQuotes === year ){
         return (post + ' ' + name + ' ' + citaion + ' ' + year);
     }
-    else
+      else
     {
-      return (post + ' ' + name);
+        return (post + ' ' + name);
     }
-      return getRandomQuote;
+        return getRandomQuote;
   });
 };
 
