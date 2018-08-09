@@ -37,27 +37,27 @@ var myQuotes = [
   var year = myQuotes.year; //dot notayion to select elements in myQuotes
 
 //random quote selector
-var randomQuote = Math.floor( Math.random() * (myQuotes.length));
-
+var randomNumber = Math.floor(Math.random() * (myQuotes.length));
+var randomQuote = myQuotes[randomNumber];  //this allows the quotes to be randomized
 // Create the getRandomQuuote function and name it getRandomQuote
 // takes 1 parameter which is the array
 
-function getRandomQuote(data) {
-refresh = alert(myQuotes.randomQuote);
-return myQuotes.refresh; //may or may not need
+function getRandomQuote(myQuotes) {
+console.log(randomQuote);
+return randomQuote(); //may or may not need
 };
 
 // Create the print Quote funtion and name it printQuote
 function printQuote(){
   $('#quote-box p').html(randomQuote);
     //need conditional statement for citation and year for span element
-    $(myQuotes).each((i)=> {
-      if(myQuotes === citation || myQuotes === year ){
+    $(randomQuote).each(()=> {
+      if(randomQuote === citation || randomQuote === year ){
         console.log ("<p> post  + ' ' + name </p> + ' ' + <span> citaion  + ' ' + year </span> ");
     }
       else
     {
-        console.log (post + ' ' + name);
+        console.log (randomQuote);
     }
         console.log(getRandomQuote);
 
