@@ -8,7 +8,8 @@ var quotes = [
 	    },
 	    {
 	    	quo:"Believe you can and you're halfway there.",
-	    	name:"Theodore Roosevelt"
+	    	name:"Theodore Roosevelt",
+        year: '1942 *fake year'
 	    },
 	    {
 	    	quo:"It does not matter how slowly you go as long as you do not stop.",
@@ -16,7 +17,8 @@ var quotes = [
 	    },
 	    {
 	    	quo:"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
-	    	name:"Thomas A. Edison"
+	    	name:"Thomas A. Edison",
+        citation: 'The Edison Files'
 	    },
 	    {
 	    	quo:"The will to win, the desire to succeed, the urge to reach your full potential... these are the keys that will unlock the door to personal excellence.",
@@ -37,7 +39,7 @@ function getRandomQuote(quotes) {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
   var randomQuote = quotes[randomNumber];  //this allows the quotes to be randomized
   console.log(randomQuote);
-  getRandomQuote();
+  //getRandomQuote();
 };
 
 // Create the print Quote funtion and name it printQuote
@@ -47,11 +49,11 @@ function printQuote(){
     //need conditional statement for citation and year for span element
     $(getFunc).each((quotes)=> {
       if(quotes === citation || quotes === year ){
-        return(getFunc);//"<p> post  + ' ' + name </p> + ' ' + <span> citaion  + ' ' + year </span> "
+        return(quotes);//"<p> post  + ' ' + name </p> + ' ' + <span> citaion  + ' ' + year </span> "
     }
       else
     {
-        return(getFunc); // $('.quote .name').html(randomQuote);
+        return(quotes); // $('.quote .name').html(randomQuote);
     }
         return(getFunc);
 
