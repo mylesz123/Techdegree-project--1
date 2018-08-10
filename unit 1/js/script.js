@@ -1,67 +1,60 @@
 // FSJS - Random Quote Generator
 let refresh = ''
 // Create the array of quote objects and name it quotes
-var myQuotes = [
+var quotes = [
   {
-			quote: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
+			quo: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
 			name:"Francis of Assisi"
 	    },
 	    {
-	    	quote:"Believe you can and you're halfway there.",
+	    	quo:"Believe you can and you're halfway there.",
 	    	name:"Theodore Roosevelt"
 	    },
 	    {
-	    	quote:"It does not matter how slowly you go as long as you do not stop.",
+	    	quo:"It does not matter how slowly you go as long as you do not stop.",
 	    	name:"Confucius"
 	    },
 	    {
-	    	quote:"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
+	    	quo:"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
 	    	name:"Thomas A. Edison"
 	    },
 	    {
-	    	quote:"The will to win, the desire to succeed, the urge to reach your full potential... these are the keys that will unlock the door to personal excellence.",
+	    	quo:"The will to win, the desire to succeed, the urge to reach your full potential... these are the keys that will unlock the door to personal excellence.",
 	    	name:"Confucius"
 	    },
       {
-        quote:'If ya don\'t know now ya know',
+        quo:'If ya don\'t know now ya know',
         name:'-The Notorious B.I.G',
         citation: '',
         year: '1998'
   }
 ];
 
-
-  var post = myQuotes.quote;
-  var name = myQuotes.name;
-  var citation = myQuotes.citation;
-  var year = myQuotes.year; //dot notayion to select elements in myQuotes
-
-//random quote selector
-var randomNumber = Math.floor(Math.random() * (myQuotes.length));
-var randomQuote = myQuotes[randomNumber];  //this allows the quotes to be randomized
 // Create the getRandomQuuote function and name it getRandomQuote
 // takes 1 parameter which is the array
 
-function getRandomQuote(myQuotes) {
-console.log(randomQuote);
-return randomQuote(); //may or may not need
+function getRandomQuote(quotes) {
+  var randomNumber = Math.floor(Math.random() * (quotes.length));
+  var randomQuote = quotes[randomNumber];  //this allows the quotes to be randomized
+  console.log(randomQuote);
+  getRandomQuote();
 };
 
 // Create the print Quote funtion and name it printQuote
 function printQuote(){
-  $('#quote-box p').html(myQuotes);
+  var getFunc = getRandomQuote(quotes); //random quote selector
+  $('#quote-box p').html(quotes);
     //need conditional statement for citation and year for span element
-    $(randomQuote).each((myQuotes)=> {
-      if(randomQuote === citation || randomQuote === year ){
-        console.log(randomQuote);//"<p> post  + ' ' + name </p> + ' ' + <span> citaion  + ' ' + year </span> "
+    $(getFunc).each((quotes)=> {
+      if(quotes === citation || quotes === year ){
+        return(getFunc);//"<p> post  + ' ' + name </p> + ' ' + <span> citaion  + ' ' + year </span> "
     }
       else
     {
-        console.log(randomQuote); // $('.quote .name').html(randomQuote);
+        return(getFunc); // $('.quote .name').html(randomQuote);
     }
-        return(getRandomQuote);
+        return(getFunc);
 
-        //console.log( i + ": " + $( myQuotes ).text() );
   });
 };
 
