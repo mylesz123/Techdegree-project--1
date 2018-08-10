@@ -38,25 +38,28 @@ var quotes = [
 function getRandomQuote(quotes) {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
   var randomQuote = quotes[randomNumber];  //this allows the quotes to be randomized
-  console.log(randomQuote);
+  return(randomQuote);
   //getRandomQuote();
 };
 
 // Create the print Quote funtion and name it printQuote
 function printQuote(){
   var getFunc = getRandomQuote(quotes); //random quote selector
-  $('#quote-box p').html(quotes);
+  //$('#quote-box p').html(quotes);
     //need conditional statement for citation and year for span element
     $(getFunc).each((quotes)=> {
-      if(quotes === citation || quotes === year ){
-        return(quotes);//"<p> post  + ' ' + name </p> + ' ' + <span> citaion  + ' ' + year </span> "
+      var paste = "<p class='quote'> quotes.quo </p>  + ' ' + <p class='name'> quotes.name + <span class='citation'> quotes.citaion  + <span class='year'> quotes.year </span> </p> ";
+      var pasteAlt = "<p class='quote'> quotes.quo </p> + <p class='name'> quotes.name </p> ";
+
+      if(quotes.hasOwnProperty('citation') || quotes.hasOwnProperty('year')) { //(quotes === citation || quotes === year )
+        return(paste);
     }
       else
     {
-        return(quotes); // $('.quote .name').html(randomQuote);
+        return(pasteAlt);
     }
-        return(getFunc);
-
+        //return(getFunc);
+        return $('.container').html(getFunc);
   });
 };
 
