@@ -44,14 +44,21 @@ function getRandomQuote(quotes) {
 
 // Create the print Quote funtion and name it printQuote
 function printQuote(){
+
   var getFunc = getRandomQuote(quotes); //random quote selector
-  //$('#quote-box p').html(quotes);
+  var quo = $(quotes.quo);
+  var name = $(quotes.name);
+  var citation  = $(quotes.citation);
+  var year = $(quotes.year);
+
+  $('#quote-box p').html(quotes);
     //need conditional statement for citation and year for span element
     $(getFunc).each((quotes)=> {
-      var paste = "<p class='quote'> quotes.quo </p>  + ' ' + <p class='name'> quotes.name + <span class='citation'> quotes.citaion  + <span class='year'> quotes.year </span> </p> ";
-      var pasteAlt = "<p class='quote'> quotes.quo </p> + <p class='name'> quotes.name </p> ";
+      if(quotes.hasOwnProperty("citation") || quotes.hasOwnProperty('year')) { //(quotes === citation || quotes === year )
 
-      if(quotes.hasOwnProperty('citation') || quotes.hasOwnProperty('year')) { //(quotes === citation || quotes === year )
+        var paste = `<p class='quote'>${quotes.quo} </p> + <p class='name'> ${quotes.name} <span class='citation'> ${quotes.citation} </span><span class='yea'> ${quotes.year} </span></p>`;
+        var pasteAlt = `<p class='quote'> ${quotes.quo} </p> + <p class='name'> ${quotes.name} </p>`;  //use template literl ${};
+
         return(paste);
     }
       else
