@@ -50,23 +50,22 @@ function printQuote(){
   var name = $(quotes.name);
   var citation  = $(quotes.citation);
   var year = $(quotes.year);
+  var paste = `<p class='quote'>${quotes.quo} </p> + <p class='name'> ${quotes.name} <span class='citation'> ${quotes.citation} </span><span class='yea'> ${quotes.year} </span></p>`;
+  var pasteAlt = `<p class='quote'> ${quotes.quo} </p> + <p class='name'> ${quotes.name} </p>`;  //use template literl ${};
 
   $('#quote-box p').html(quotes);
     //need conditional statement for citation and year for span element
     $(getFunc).each((quotes)=> {
       if(quotes.hasOwnProperty("citation") || quotes.hasOwnProperty('year')) { //(quotes === citation || quotes === year )
 
-        var paste = `<p class='quote'>${quotes.quo} </p> + <p class='name'> ${quotes.name} <span class='citation'> ${quotes.citation} </span><span class='yea'> ${quotes.year} </span></p>`;
-        var pasteAlt = `<p class='quote'> ${quotes.quo} </p> + <p class='name'> ${quotes.name} </p>`;  //use template literl ${};
-
-        return(paste);
+        console.log(quotes);
     }
       else
     {
-        return(pasteAlt);
+        console.log(getFunc);//when i log quotes, an index number shows in the console
     }
-        //return(getFunc);
-        return $('.container').html(getFunc);
+        return(quotes);
+
   });
 };
 
