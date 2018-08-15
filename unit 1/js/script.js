@@ -24,7 +24,7 @@ var quotes = [
 	    {
 	    	quo:"Believe you can and you're halfway there.",
 	    	name:"Theodore Roosevelt",
-        year: '1942 '
+        year:'1942'
 	    },
 	    {
 	    	quo:"It does not matter how slowly you go as long as you do not stop.",
@@ -33,7 +33,7 @@ var quotes = [
 	    {
 	    	quo:"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
 	    	name:"Thomas A. Edison",
-        citation: 'The Edison Files'
+        citation:'The Edison Files'
 	    },
 	    {
 	    	quo:"The will to win, the desire to succeed, the urge to reach your full potential... these are the keys that will unlock the door to personal excellence.",
@@ -67,19 +67,19 @@ function getRandomColor(){
 // Create the print Quote funtion and name it printQuote
 function printQuote(){
   var getFunc = getRandomQuote(quotes); //random quote selector
-  var getColor = getRandomQuote(colorWheel)
-  var quoteString = `<p class="quote">${getFunc.quo}</p> <p class="name">${getFunc.name}</p>`;
+  var getColor = getRandomColor(colorWheel)
+  var quoteString = `<p class="quote"> ${getFunc.quo} </p><p class="name"> ${getFunc.name} </p>`;
 
-function $swapColor(colorWheel){
-  $("body").css({ backgroundColor: colorWheel[randomColor], color: colorWheel[randomColor] });
-
+function $swapColor(getColor){
+  $("body").css({ backgroundColor: colorWheel[getColor]});
+  return getColor;
   };
 
     //need conditional statement for citation and year for span element
 
       if(getFunc.hasOwnProperty("citation") || getFunc.hasOwnProperty("year")) { //(quotes === citation || quotes === year )
 
-        $('#quote-box').html(quoteString +=  `<span class="citation">${getFunc.citation}</span><span class="year">${getFunc.year}></span>`);
+        $('#quote-box').html(quoteString +=  `<span class="citation"> ${getFunc.citation} </span><span class="year"> ${getFunc.year} </span>`);
 
         }
 
