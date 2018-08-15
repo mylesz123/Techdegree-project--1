@@ -55,10 +55,10 @@ function printQuote(){
   var pasteAlt = `<p class='quote'> ${quotes.quo} </p> + <p class='name'> ${quotes.name} </p>`;  //use template literl ${};
 */
 
-  $('#quote-box p').html(quotes);
+//  $('#quote-box p').append(getFunc); trying append method
     //need conditional statement for citation and year for span element
     $(getFunc).each((quotes)=> {
-      if(getFunc.hasOwnProperty("citation") || getFunc.hasOwnProperty('year')) { //(quotes === citation || quotes === year )
+      if(getFunc.hasOwnProperty("citation") || getFunc.hasOwnProperty("year")) { //(quotes === citation || quotes === year )
 
         console.log(getFunc);
     }
@@ -66,9 +66,9 @@ function printQuote(){
     {
         console.log(getFunc);//when i log quotes, an index number shows in the console
     }
-        $('#quote-box').append(getFunc);
-        return(getFunc);
 
+        return(getFunc);
+        $('#quote-box').append(getFunc);
   });
 };
 
