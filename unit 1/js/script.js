@@ -1,6 +1,21 @@
 // FSJS - Random Quote Generator
 let refresh = ''
 // Create the array of quote objects and name it quotes
+var colorWheel = [
+  "#16a085",
+   "#27ae60",
+   "#2c3e50",
+   "#f39c12",
+   "#e74c3c",
+   "#9b59b6",
+   "#FB6964",
+   "#342224",
+   "#472E32",
+   "#BDBB99",
+   "#77B1A9",
+   "#73A857"
+];
+
 var quotes = [
   {
 			quo: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
@@ -9,7 +24,7 @@ var quotes = [
 	    {
 	    	quo:"Believe you can and you're halfway there.",
 	    	name:"Theodore Roosevelt",
-        year: '1942 *fake year'
+        year: '1942 '
 	    },
 	    {
 	    	quo:"It does not matter how slowly you go as long as you do not stop.",
@@ -27,7 +42,7 @@ var quotes = [
       {
         quo:'If ya don\'t know now ya know',
         name:'-The Notorious B.I.G',
-        citation: '',
+        citation: 'A song I heard on the radio',
         year: '1998'
   }
 ];
@@ -39,39 +54,44 @@ function getRandomQuote(quotes) {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
   var randomQuote = quotes[randomNumber];  //this allows the quotes to be randomized
   return(randomQuote);
+};
+
+function getRandomColor(){
+  var randomColor = Math.floor(Math.random() * colorWheel.length);
+  var screenColor = colorWheel[randomColor];
   //getRandomQuote();
 };
 
+
+
 // Create the print Quote funtion and name it printQuote
 function printQuote(){
-
   var getFunc = getRandomQuote(quotes); //random quote selector
-  /*var quo = $(getFunc.quo);
-  var name = $(getFunc.name);
-  var citation  = $(getFunc.citation);
-  var year = $(getFunc.year);
+  var getColor = getRandomQuote(colorWheel)
+  var quoteString = `<p class="quote">${getFunc.quo}</p> <p class="name">${getFunc.name}</p>`;
 
-  var paste = `<p class='quote'>${quotes.quo} </p> + <p class='name'> ${quotes.name} <span class='citation'> ${quotes.citation} </span><span class='yea'> ${quotes.year} </span></p>`;
-  var pasteAlt = `<p class='quote'> ${quotes.quo} </p> + <p class='name'> ${quotes.name} </p>`;  //use template literl ${};
-*/
+function $swapColor(colorWheel){
+  $("body").css({ backgroundColor: colorWheel[randomColor], color: colorWheel[randomColor] });
 
-//  $('#quote-box p').append(getFunc); trying append method
+  };
+
     //need conditional statement for citation and year for span element
-    $(getFunc).each((quotes)=> {
+
       if(getFunc.hasOwnProperty("citation") || getFunc.hasOwnProperty("year")) { //(quotes === citation || quotes === year )
 
-        console.log(getFunc);
-    }
+        $('#quote-box').html(quoteString +=  `<span class="citation">${getFunc.citation}</span><span class="year">${getFunc.year}></span>`);
+
+        }
+
       else
     {
-        console.log(getFunc);//when i log quotes, an index number shows in the console
+        $('#quote-box').html(quoteString);
+        $swapColor();
+        //quoteString;//when i log quotes, an index number shows in the console
     }
+        //return(getFunc);
 
-        return(getFunc);
-        $('#quote-box').append(getFunc);
-  });
 };
-
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
