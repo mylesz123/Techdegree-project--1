@@ -1,5 +1,5 @@
 // FSJS - Random Quote Generator
-let refresh = ''
+
 // Create the array of quote objects and name it quotes
 var colorWheel = [
   "#16a085",
@@ -53,6 +53,8 @@ var quotes = [
 function getRandomQuote(quotes) {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
   var randomQuote = quotes[randomNumber];  //this allows the quotes to be randomized
+  //add logic
+
   return(randomQuote);
 };
 
@@ -62,8 +64,6 @@ function getRandomColor(){
   return(screenColor);
   //getRandomQuote();
 };
-
-
 
 // Create the print Quote funtion and name it printQuote
 function printQuote(){
@@ -97,5 +97,5 @@ myVar = setInterval(printQuote, 7500);
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-printQuote();
 printAuto();
+printQuote();
