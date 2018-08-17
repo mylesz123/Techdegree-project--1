@@ -68,27 +68,27 @@ function getRandomColor(){
 // Create the print Quote funtion and name it printQuote
 function printQuote(){
   var getFunc = getRandomQuote(quotes); //random quote selector
-  var quoteString = `<p class="quote"> ${getFunc.quo} </p><p class="name"> ${getFunc.name} </p>`;
+  var quoteString = `<p class="quote"> ${getFunc.quo} </p><p class="name"> ${getFunc.name} `;
   var getColor = getRandomColor(colorWheel)
 
     //need conditional statement for citation and year for span element
 
     if(getFunc.hasOwnProperty('citation')) {
-      $('#quote-box').html(quoteString += `<span class="citation"> ${getFunc.citation} </span>`);
+      $('#quote-box').html(quoteString += `<span class="citation"> ${getFunc.citation} </span></p>`);
       $("body").css({ backgroundColor: getColor}); // trying to use .css property to change background color {document.body.style.backgroundColor = getColor;
       $("#loadQuote").css({ backgroundColor: getColor});
  }
-    else if(getFunc.hasOwnProperty('year')) {
-      $('#quote-box').html(quoteString += `<span class="year"> ${getFunc.year} </span>`);
+     if(getFunc.hasOwnProperty('year')) {
+      $('#quote-box').html(quoteString += `<span class="year"> ${getFunc.year} </span></p>`);
       $("body").css({ backgroundColor: getColor});
       $("#loadQuote").css({ backgroundColor: getColor});
  }
-    else {
+
       $('#quote-box').html(quoteString);
       $("body").css({ backgroundColor: getColor});
       $("#loadQuote").css({ backgroundColor: getColor});
       //quoteString;//when i log quotes, an index number shows in the console
-}
+
 };
 function printAuto(){
 myVar = setInterval(printQuote, 7500);
