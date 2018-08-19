@@ -84,14 +84,19 @@ function printQuote(){
       $("#loadQuote").css({ backgroundColor: getColor});
  }
 
-      $('#quote-box').html(quoteString);
+      $('#quote-box').html(quoteString += `</p>`);
       $("body").css({ backgroundColor: getColor});
       $("#loadQuote").css({ backgroundColor: getColor});
       //quoteString;//when i log quotes, an index number shows in the console
 
 };
-function printAuto(){
-myVar = setInterval(printQuote, 7500);
+
+function printAuto(){ //to set how long a quote stays before the next appears
+
+$('#loadQuote').on('click', () => {
+  myVar = setInterval(getRandomQuote, 5000);
+  myVar.printQuote;
+})
 };
 
 // This event listener will respond to "Show another quote" button clicks
