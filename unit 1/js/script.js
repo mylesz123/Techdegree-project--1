@@ -54,8 +54,7 @@ function getRandomQuote(quotes) {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
   var randomQuote = quotes[randomNumber];  //this allows the quotes to be randomized
   //add logic
-
-  return(randomQuote);
+    return randomQuote;
 };
 
 function getRandomColor(){
@@ -95,7 +94,7 @@ function printAuto(){ //to set how long a quote stays before the next appears
 
 $('#loadQuote').on('click', () => {
   myVar = setInterval(getRandomQuote, 5000);
-  myVar.printQuote;
+  myVar.getRandomQuote;
 })
 };
 
